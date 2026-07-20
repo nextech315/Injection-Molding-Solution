@@ -125,12 +125,12 @@
             border: 1px solid var(--border-color);
             border-radius: 6px;
             overflow: hidden;
-            background-color: #fafafa;
+            background-color: #ffffff;
         }
 
         .comparison-label {
-            padding: 8px 12px;
-            font-size: 0.9rem;
+            padding: 10px 12px;
+            font-size: 0.95rem;
             font-weight: 600;
             text-align: center;
             color: #ffffff;
@@ -147,18 +147,20 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 320px;
-            background-color: #f1f3f5;
+            height: 340px;
+            background-color: #f8f9fa; /* 깔끔한 연한 회색 배경 */
             display: flex;
             align-items: center;
             justify-content: center;
+            border-top: 1px solid var(--border-color);
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* 비율 유지하며 깔끔하게 이미지 표시 */
-            background-color: #222222; /* 투명 부품과 빨간 동그라미가 잘 드러나도록 어두운 배경 처리 */
+            object-fit: contain; /* 사진 비율 유지 */
+            background-color: #1a1a1a; /* 이미지가 로드되었을 때 투명 부품이 잘 보이도록 시인성 확보 배경 */
+            display: block;
         }
 
         /* 수치/데이터 요약 정보 */
@@ -273,15 +275,15 @@
                     <div class="comparison-box before">
                         <div class="comparison-label">BEFORE (개선 전: 웰드 라인 선명)</div>
                         <div class="image-wrapper">
-                            <img src="before.jpg" alt="개선 전 Cosmetic Cap - 웰드 라인 결함 선명함">
+                            <img src="./before.jpg" alt="개선 전 Cosmetic Cap - 웰드 라인 결함 선명함">
                         </div>
                     </div>
 
                     <!-- After -->
                     <div class="comparison-box after">
-                        <div class="comparison-label">AFTER (개선 후: 웰드 라인 최소화)</div>
+                        <div class="comparison-label">AFTER (개선 후: 웰드 라인 현저히 개선)</div>
                         <div class="image-wrapper">
-                            <img src="after.jpg" alt="개선 후 Cosmetic Cap - 웰드 라인 현저히 개선됨">
+                            <img src="./after.jpg" alt="개선 후 Cosmetic Cap - 웰드 라인 현저히 개선됨">
                         </div>
                     </div>
                 </div>

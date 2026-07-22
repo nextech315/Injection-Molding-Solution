@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nextech315.github.io/Injection-Molding-Solution/sitemap.xml

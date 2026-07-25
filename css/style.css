@@ -253,6 +253,20 @@ nav {
   font-size: 0.78rem; color: var(--gray);
   display: block; margin-top: 0.2rem;
 }
+.hero-features-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2.2rem 1.8rem;
+  margin-top: 4rem; padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+.hero-feature-item .main {
+  font-size: 0.92rem; font-weight: 700; color: var(--white);
+  margin-bottom: 0.35rem; line-height: 1.45;
+}
+.hero-feature-item .sub {
+  font-size: 0.76rem; color: var(--gray); line-height: 1.45;
+}
 
 /* ── SECTION BASE ── */
 section { padding: 100px 5vw; }
@@ -607,6 +621,7 @@ footer {
   .how-step { grid-template-columns: 1fr; }
   .how-step:nth-child(even) .step-content { order: unset; text-align: left; }
   .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
+  .hero-features-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; text-align: center; }
 
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions a { width: 100%; text-align: center; }

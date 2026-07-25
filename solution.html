@@ -47,7 +47,7 @@
 <!-- PAGE HEADER -->
 <header class="page-header">
   <span class="section-tag">Solution</span>
-  <h1 data-i18n="ph-h1">AI 기반 사출 공정 최적화 솔루션</h1>
+  <h1 class="title-oneline" data-i18n="ph-h1">AI 머신 러닝 기반 사출 공정 최적화 솔루션</h1>
   <p data-i18n="ph-p">문제 진단부터 최적 조건 도출까지, 하나의 플랫폼에서 해결합니다.</p>
 </header>
 
@@ -157,8 +157,8 @@
     <div class="defect-card"><div class="defect-num">05</div><div class="defect-name-ko">플로우 마크</div><div class="defect-name-en">Flow Mark</div></div>
     <div class="defect-card"><div class="defect-num">06</div><div class="defect-name-ko">실버 스트릭</div><div class="defect-name-en">Silver Streak</div></div>
     <div class="defect-card"><div class="defect-num">07</div><div class="defect-name-ko">제팅</div><div class="defect-name-en">Jetting</div></div>
-    <div class="defect-card"><div class="defect-num">08</div><div class="defect-name-ko">번 마크</div><div class="defect-name-en">Burn Mark</div></div>
-    <div class="defect-card"><div class="defect-num">09</div><div class="defect-name-ko">공동 / 보이드</div><div class="defect-name-en">Void</div></div>
+    <div class="defect-card"><div class="defect-num">08</div><div class="defect-name-ko">탄흔</div><div class="defect-name-en">Burn Mark</div></div>
+    <div class="defect-card"><div class="defect-num">09</div><div class="defect-name-ko">기공</div><div class="defect-name-en">Void</div></div>
     <div class="defect-card"><div class="defect-num">10</div><div class="defect-name-ko">휨 변형</div><div class="defect-name-en">Warpage</div></div>
   </div>
 </section>
@@ -167,7 +167,7 @@
 <section id="features" style="background:var(--surface)">
   <div class="reveal">
     <span class="section-tag">Features</span>
-    <h2 class="section-title" data-i18n="features-title">현장을 위한<br>핵심 기능</h2>
+    <h2 class="section-title title-oneline" data-i18n="features-title">현장을 위한 핵심 기능</h2>
     <p class="section-sub" data-i18n="features-sub">이론과 현장 경험을 결합한 기능 설계로, 도입 즉시 효과를 체감할 수 있습니다.</p>
   </div>
   <div class="features-grid reveal">
@@ -209,7 +209,7 @@
   <div class="algo-wrap reveal">
     <div>
       <span class="section-tag">AI Engine</span>
-      <h2 class="section-title" data-i18n="algo-title">데이터에 맞는<br>최적 알고리즘을<br>자동 선택</h2>
+      <h2 class="section-title title-oneline" data-i18n="algo-title">데이터에 맞는 최적 알고리즘을 자동 선택</h2>
       <p class="section-sub" data-i18n="algo-sub">단일 알고리즘에 의존하지 않습니다. 데이터 크기와 불량 특성에 따라 교차검증을 통해 가장 정확한 모델을 선택합니다.</p>
       <div class="algo-list">
         <div class="algo-item">
@@ -236,12 +236,34 @@
       <div class="algo-bar-row"><div class="algo-bar-label"><span>Burn Mark</span><span>0.90</span></div><div class="algo-bar-track"><div class="algo-bar-fill" style="width:90%"></div></div></div>
     </div>
   </div>
+
+  <div class="algo-opt-section reveal">
+    <div class="algo-opt-label" data-i18n="algo-opt-label">역추론 최적화 알고리즘 (4종)</div>
+    <div class="algo-list algo-list-4col">
+      <div class="algo-item">
+        <div class="algo-badge">Fast</div>
+        <div><h4>L-BFGS-B</h4><p data-i18n="opt1-p">메모리 효율적인 준뉴턴 방법으로, 변수가 많은 문제에서도 빠르게 수렴합니다.</p></div>
+      </div>
+      <div class="algo-item">
+        <div class="algo-badge">Constraint</div>
+        <div><h4>SLSQP</h4><p data-i18n="opt2-p">제약 조건이 있는 비선형 최적화에 특화되어, 실제 공정 범위를 벗어나지 않는 해를 찾습니다.</p></div>
+      </div>
+      <div class="algo-item">
+        <div class="algo-badge">No-Gradient</div>
+        <div><h4>Powell</h4><p data-i18n="opt3-p">미분 없이 동작해 불연속적이거나 노이즈가 있는 손실 함수에도 안정적으로 대응합니다.</p></div>
+      </div>
+      <div class="algo-item">
+        <div class="algo-badge">Simplex</div>
+        <div><h4>Nelder-Mead</h4><p data-i18n="opt4-p">심플렉스 기반 탐색으로 그래디언트 정보 없이도 최적해에 접근하는 대안적 알고리즘입니다.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CTA -->
 <section id="cta-banner" style="text-align:center; padding:90px 5vw; background:var(--surface)">
   <div class="reveal">
-    <h2 class="section-title" data-i18n="cta2-title">직접 확인하는 것이<br>가장 빠릅니다</h2>
+    <h2 class="section-title title-oneline" data-i18n="cta2-title">직접 확인하는 것이 가장 빠릅니다</h2>
     <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta2-sub">실제 검증 사례와 데모를 통해 NexTech AI의 정확도를 확인해 보세요.</p>
     <div class="hero-actions" style="justify-content:center">
       <a href="case.html" class="btn-primary" data-i18n="cta2-btn1">적용 사례 보기</a>
@@ -265,7 +287,7 @@
 const PAGE_EN = {
   "page-title": "Solution | NexTech AI Injection Defect Solution",
   "nav-home": "Home", "nav-solution": "Solution", "nav-case": "Case Studies", "nav-contact": "Contact", "nav-cta": "Request Demo",
-  "ph-h1": "AI-Based Injection Process Optimization",
+  "ph-h1": "AI Machine Learning-Based Injection Process Optimization",
   "ph-p": "From diagnosis to optimal conditions, solved on a single platform.",
   "problem-title": "Limits of the Old Approach",
   "problem-sub": "Defect response built solely on field experience has limited reproducibility and scalability.",
@@ -299,7 +321,7 @@ const PAGE_EN = {
   "how3-item4": "CSV download and DB storage",
   "defects-title": "Full Coverage of the Top 10 Injection Defects",
   "defects-sub": "Diagnoses and optimizes all 10 industry-standard defect types simultaneously in one system.",
-  "features-title": "Key Features<br>for the Shop Floor",
+  "features-title": "Key Features for the Shop Floor",
   "features-sub": "Designed by combining theory with field experience, so you feel the impact from day one.",
   "feat1-h3": "Automatic AI Algorithm Selection",
   "feat1-p": "Analyzes data size and characteristics to automatically select the best model among 6 algorithms including RandomForest, XGBoost, GradientBoosting, and Logistic Regression. Reliability is ensured via CV R&sup2;-based cross-validation.",
@@ -313,13 +335,18 @@ const PAGE_EN = {
   "feat5-p": "Displays correlation coefficients between 34 process variables and the 10 defect types as a color matrix, helping you spot improvement priorities at a glance.",
   "feat6-h3": "AI Expert Report",
   "feat6-p": "Groq LLM-based AI interprets the analysis and automatically drafts action items floor operators can execute immediately.",
-  "algo-title": "Automatically Selects<br>the Best Algorithm<br>for Your Data",
+  "algo-title": "Automatically Selects the Best Algorithm for Your Data",
   "algo-sub": "We don&rsquo;t rely on a single algorithm. Cross-validation selects the most accurate model based on data size and defect characteristics.",
   "algo1-p": "Optimal for mid-sized nonlinear data. Resistant to overfitting and delivers stable predictions.",
   "algo2-p": "Powerful performance on complex patterns and large-scale data. Sequentially reduces error to achieve high accuracy.",
   "algo3-p": "Well-suited to small linear datasets. Fast and easy to interpret, making it a solid baseline model.",
+  "algo-opt-label": "Inverse Optimization Algorithms (4 Types)",
+  "opt1-p": "A memory-efficient quasi-Newton method that converges quickly even on problems with many variables.",
+  "opt2-p": "Specialized for constrained nonlinear optimization, finding solutions that stay within real process ranges.",
+  "opt3-p": "Works without derivatives, handling discontinuous or noisy loss functions with stable results.",
+  "opt4-p": "A simplex-based search &mdash; an alternative approach that reaches the optimum without gradient information.",
   "algo-visual-title": "Sample Model Selection Result (by CV R&sup2;)",
-  "cta2-title": "Seeing It Yourself<br>Is the Fastest Way",
+  "cta2-title": "Seeing It Yourself Is the Fastest Way",
   "cta2-sub": "Check NexTech AI&rsquo;s accuracy through real case studies and a live demo.",
   "cta2-btn1": "View Case Studies",
   "cta2-btn2": "Request a Consultation"

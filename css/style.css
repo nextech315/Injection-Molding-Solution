@@ -210,6 +210,7 @@ nav {
   letter-spacing: -0.03em;
   margin-bottom: 1.4rem;
 }
+.hero-title-sm { font-size: clamp(1.9rem, 4vw, 3.1rem); }
 .hero-title em { font-style: normal; color: var(--cyan); }
 .hero-sub {
   font-size: 1.05rem; font-weight: 400;
@@ -261,11 +262,12 @@ nav {
   text-align: left;
 }
 .hero-feature-item .main {
-  font-size: 0.92rem; font-weight: 700; color: var(--white);
-  margin-bottom: 0.35rem; line-height: 1.45;
+  font-size: 0.8rem; font-weight: 700; color: var(--white);
+  margin-bottom: 0.35rem; line-height: 1.4;
+  white-space: nowrap;
 }
 .hero-feature-item .sub {
-  font-size: 0.76rem; color: var(--gray); line-height: 1.45;
+  font-size: 0.72rem; color: var(--gray); line-height: 1.4;
 }
 
 /* ── SECTION BASE ── */
@@ -281,6 +283,10 @@ section { padding: 100px 5vw; }
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800; letter-spacing: -0.02em;
   line-height: 1.2; margin-bottom: 1rem;
+}
+.title-oneline {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem) !important;
+  white-space: nowrap;
 }
 .section-sub {
   font-size: 1rem; color: var(--lgray);
@@ -400,6 +406,15 @@ section { padding: 100px 5vw; }
 /* ── ALGORITHM ── */
 .algo-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
 .algo-list { display: flex; flex-direction: column; gap: 1rem; }
+.algo-opt-section { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+.algo-opt-label {
+  font-family: var(--font-en); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 1.5rem;
+}
+.algo-list-4col { flex-direction: row; flex-wrap: wrap; }
+.algo-list-4col .algo-item { flex: 1 1 240px; flex-direction: column; align-items: flex-start; }
+.algo-list-4col .algo-badge { margin-bottom: 0.6rem; }
 .algo-item {
   display: flex; gap: 1rem; align-items: flex-start;
   padding: 1.2rem 1.4rem;
@@ -622,6 +637,8 @@ footer {
   .how-step:nth-child(even) .step-content { order: unset; text-align: left; }
   .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
   .hero-features-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; text-align: center; }
+  .hero-feature-item .main { white-space: normal; }
+  .title-oneline { white-space: normal; }
 
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions a { width: 100%; text-align: center; }

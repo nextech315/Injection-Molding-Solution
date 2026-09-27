@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=3">
+<style>
+.case-photo-groups.three-col { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 900px) {
+  .case-photo-groups.three-col { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -336,14 +342,18 @@
 
   <div class="case-photos reveal">
     <div class="case-photos-label" data-i18n="edge-photos-label">실제 화면 캡처</div>
-    <div class="case-photo-groups">
+    <div class="case-photo-groups three-col">
       <div>
-        <div class="case-photo-group-title" data-i18n="edge-group1-title">센서 트렌드에 기록된 이상·복구 (HMI 패널)</div>
-        <img src="images/edge-ai/hmi-panel.png" alt="사출기 실시간 상태 패널, 4개 채널 트렌드 차트에 급등 후 복귀 패턴이 기록됨" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
+        <div class="case-photo-group-title" data-i18n="edge-group1-title">정상 상태 실시간 모니터링</div>
+        <img src="images/edge-ai/normal-state.png" alt="정상 상태의 데이터 스트림 워크플로우와 XAI 기여도 분석, AI 자율 제어 개입 리포트 화면. 위험도 25.1%로 임계치 이내 안정 유지" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
       </div>
       <div>
-        <div class="case-photo-group-title" data-i18n="edge-group2-title">XAI 기여도 분석 & AI 자율 제어 리포트</div>
-        <img src="images/edge-ai/xai-report.png" alt="XAI 위험 요인 기여도 분석과 AI 자율 제어 개입 리포트, Error SV 및 Optimized SV 다운로드 버튼" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
+        <div class="case-photo-group-title" data-i18n="edge-group2-title">불량 감지 시 AI 실시간 개선</div>
+        <img src="images/edge-ai/defect-state.png" alt="불량 감지 시 위험도가 95.0%로 급등하고 AI가 최적화 알고리즘으로 24.5%까지 복구 조건을 재계산하는 화면" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
+      </div>
+      <div>
+        <div class="case-photo-group-title" data-i18n="edge-group3-title">사출기 실시간 상태 패널 (HMI 트렌드)</div>
+        <img src="images/edge-ai/hmi-real.png" alt="사출기 실시간 상태 패널. 최대사출압·쿠션량·석백·중량 4개 채널 트렌드 차트에 급등 후 정상 복귀 패턴이 기록됨" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
       </div>
     </div>
   </div>
@@ -458,8 +468,9 @@ const PAGE_EN = {
   "edge-m3-label": "Time to Normalize",
   "edge-m3-sub": "Fully automatic, no human input &mdash; verified across 2 repeated runs",
   "edge-photos-label": "Actual Screen Captures",
-  "edge-group1-title": "Spike and Recovery, Recorded in the Sensor Trends (HMI Panel)",
-  "edge-group2-title": "XAI Contribution Analysis &amp; AI Autonomous Control Report"
+  "edge-group1-title": "Real-Time Monitoring in Normal Operation",
+  "edge-group2-title": "AI Live Correction When a Defect Is Detected",
+  "edge-group3-title": "Real-Time Injection Machine Status Panel (HMI Trends)"
 };
 </script>
 <script src="js/main.js"></script>

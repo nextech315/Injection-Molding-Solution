@@ -260,6 +260,97 @@
   </div>
 </section>
 
+<!-- EDGE AI -->
+<section id="edge-ai" style="background:var(--surface)">
+  <div class="reveal centered">
+    <span class="section-tag">New · Edge AI</span>
+    <h2 class="section-title title-oneline" data-i18n="edge-title">한 걸음 더 — 실시간 자율 제어 (Edge AI)</h2>
+    <p class="section-sub" data-i18n="edge-sub">위험을 진단하는 것을 넘어, 사람이 개입하기 전에 AI가 스스로 공정 조건을 재설정합니다.</p>
+  </div>
+
+  <div class="video-frame reveal" style="margin-left:auto;margin-right:auto">
+    <video controls playsinline muted loop preload="metadata">
+      <source src="videos/edge-ai-demo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="case-wrap reveal">
+    <div class="case-timeline">
+      <div class="case-step">
+        <div class="case-dot">1</div>
+        <div class="case-step-body">
+          <h4 data-i18n="edge1-h4">실시간 센서 스트림 모니터링</h4>
+          <p data-i18n="edge1-p">사출기 HMI와 연동된 최대사출압·쿠션량·석백·중량 데이터를 실시간으로 수집하며 종합 불량 위험도를 상시 추론합니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <div class="case-dot">2</div>
+        <div class="case-step-body">
+          <h4 data-i18n="edge2-h4">이상 감지 — 위험도 급등</h4>
+          <p data-i18n="edge2-p">공정 조건이 흔들리면 위험도가 임계치를 넘어 급등합니다. 실제 데모에서는 정상 상태 대비 <span class="accent">95.0</span>%까지 치솟는 상황을 재현했습니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <div class="case-dot">3</div>
+        <div class="case-step-body">
+          <h4 data-i18n="edge3-h4">AI 자율 SV 재계산</h4>
+          <p data-i18n="edge3-p">사람의 개입 없이 AI가 최적 공정 조건(SV)을 역산출해 즉시 피드백합니다. XAI 분석으로 어떤 변수가 위험을 유발했는지도 함께 설명합니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <div class="case-dot">4</div>
+        <div class="case-step-body">
+          <h4 data-i18n="edge4-h4">약 12초 만에 정상화</h4>
+          <p data-i18n="edge4-p">재계산된 조건이 적용되며 위험도가 다시 임계치 이내로 돌아옵니다. Error SV·Optimized SV 데이터를 그대로 다운로드해 현장 PLC 반영도 가능합니다.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="case-result">
+        <div class="case-result-title" data-i18n="edge-result-title">실제 데모 결과</div>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-label" data-i18n="edge-m1-label">에러 주입 시 종합 위험도</div>
+            <div class="case-metric-row">
+              <div class="case-metric-val"><span class="accent">95.0</span>%</div>
+              <div class="case-metric-sub" data-i18n="edge-m1-sub">임계치 30% 초과</div>
+            </div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label" data-i18n="edge-m2-label">AI 자율 제어 후 위험도</div>
+            <div class="case-metric-row">
+              <div class="case-metric-val"><span class="accent">24.9</span>%</div>
+              <div class="case-metric-sub" data-i18n="edge-m2-sub">SV 자동 재계산 적용</div>
+            </div>
+            <span class="case-badge badge-green" data-i18n="edge-m2-badge">▼ 70.1%p 감소</span>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label" data-i18n="edge-m3-label">정상화 소요 시간</div>
+            <div class="case-metric-row">
+              <div class="case-metric-val">~<span class="accent">12</span><span style="font-size:1rem">초</span></div>
+              <div class="case-metric-sub" data-i18n="edge-m3-sub">사람 개입 없이 자동 복구 · 2회 반복 검증</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-photos reveal">
+    <div class="case-photos-label" data-i18n="edge-photos-label">실제 화면 캡처</div>
+    <div class="case-photo-groups">
+      <div>
+        <div class="case-photo-group-title" data-i18n="edge-group1-title">센서 트렌드에 기록된 이상·복구 (HMI 패널)</div>
+        <img src="images/edge-ai/hmi-panel.png" alt="사출기 실시간 상태 패널, 4개 채널 트렌드 차트에 급등 후 복귀 패턴이 기록됨" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
+      </div>
+      <div>
+        <div class="case-photo-group-title" data-i18n="edge-group2-title">XAI 기여도 분석 & AI 자율 제어 리포트</div>
+        <img src="images/edge-ai/xai-report.png" alt="XAI 위험 요인 기여도 분석과 AI 자율 제어 개입 리포트, Error SV 및 Optimized SV 다운로드 버튼" style="width:100%; height:auto; border-radius:14px; border:1px solid var(--border); display:block" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section id="cta-banner" style="text-align:center; padding:90px 5vw; background:var(--surface)">
   <div class="reveal">
@@ -349,7 +440,28 @@ const PAGE_EN = {
   "cta2-title": "Seeing It Yourself Is the Fastest Way",
   "cta2-sub": "Check NexTech AI&rsquo;s accuracy through real case studies and a live demo.",
   "cta2-btn1": "View Case Studies",
-  "cta2-btn2": "Request a Consultation"
+  "cta2-btn2": "Request a Consultation",
+  "edge-title": "One Step Further &mdash; Real-Time Autonomous Control (Edge AI)",
+  "edge-sub": "Beyond diagnosis &mdash; AI resets process conditions on its own, before a human ever has to.",
+  "edge1-h4": "Real-Time Sensor Stream Monitoring",
+  "edge1-p": "Collects max injection pressure, cushion, suck-back, and weight data live from the injection machine&rsquo;s HMI, continuously inferring the overall defect risk.",
+  "edge2-h4": "Anomaly Detected &mdash; Risk Spikes",
+  "edge2-p": "When process conditions drift, risk surges past the threshold. In the real demo, it spiked to <span class=\\\"accent\\\">95.0</span>% from a normal baseline.",
+  "edge3-h4": "AI Autonomously Recalculates SV",
+  "edge3-p": "Without any human input, AI back-calculates optimal process conditions (SV) and feeds them back instantly. XAI also explains which variable triggered the risk.",
+  "edge4-h4": "Back to Normal in About 12 Seconds",
+  "edge4-p": "The recalculated conditions apply and risk drops back within the threshold. Error SV / Optimized SV data can be downloaded as-is for the plant&rsquo;s PLC.",
+  "edge-result-title": "Actual Demo Results",
+  "edge-m1-label": "Overall Risk at Error Injection",
+  "edge-m1-sub": "Exceeded the 30% threshold",
+  "edge-m2-label": "Risk After Autonomous Control",
+  "edge-m2-sub": "With auto-recalculated SV applied",
+  "edge-m2-badge": "&#9660; 70.1pp decrease",
+  "edge-m3-label": "Time to Normalize",
+  "edge-m3-sub": "Fully automatic, no human input &mdash; verified across 2 repeated runs",
+  "edge-photos-label": "Actual Screen Captures",
+  "edge-group1-title": "Spike and Recovery, Recorded in the Sensor Trends (HMI Panel)",
+  "edge-group2-title": "XAI Contribution Analysis &amp; AI Autonomous Control Report"
 };
 </script>
 <script src="js/main.js"></script>

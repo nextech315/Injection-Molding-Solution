@@ -36,226 +36,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=3">
 <link rel="stylesheet" href="css/nav-extra.css?v=1">
-
-<style>
-/* Hero 8-Module Interactive Cards */
-.hero-features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.1rem;
-  margin-top: 3.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
-  text-align: left;
-}
-@media (max-width: 1024px) {
-  .hero-features-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .hero-features-grid { grid-template-columns: 1fr; }
-}
-a.hero-feature-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
-  background: rgba(20, 23, 32, 0.75);
-  border: 1px solid var(--border2);
-  border-radius: 12px;
-  padding: 1.1rem 1.15rem;
-  transition: all 0.22s ease;
-  backdrop-filter: blur(8px);
-}
-a.hero-feature-card:hover {
-  border-color: var(--cyan);
-  background: rgba(0, 229, 255, 0.08);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15);
-}
-a.hero-feature-card .card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-a.hero-feature-card .mod-badge-sm {
-  font-family: var(--font-en);
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: var(--cyan);
-  background: var(--cyan-dim);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-a.hero-feature-card .arrow-icon {
-  color: var(--gray);
-  font-size: 0.85rem;
-  transition: transform 0.2s, color 0.2s;
-}
-a.hero-feature-card:hover .arrow-icon {
-  color: var(--cyan);
-  transform: translateX(3px);
-}
-a.hero-feature-card .main {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.35rem;
-  line-height: 1.35;
-}
-a.hero-feature-card .sub {
-  font-size: 0.74rem;
-  color: var(--gray);
-  line-height: 1.45;
-}
-
-/* 8대 모듈 상세 쇼케이스 */
-.mod-showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-@media (max-width: 900px) {
-  .mod-showcase-grid { grid-template-columns: 1fr; }
-}
-.mod-showcase-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 2.2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  position: relative;
-}
-.mod-showcase-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--cyan);
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
-}
-.mod-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-}
-.mod-code-pill {
-  font-family: var(--font-en);
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--cyan);
-  background: var(--cyan-dim);
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-}
-.mod-tag-pill {
-  font-size: 0.75rem;
-  color: var(--gray);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  padding: 0.25rem 0.7rem;
-  border-radius: 6px;
-}
-.mod-showcase-card h3 {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
-}
-.mod-showcase-card .mod-sub-en {
-  font-size: 0.82rem;
-  color: var(--gray);
-  margin-bottom: 1.2rem;
-  font-family: var(--font-en);
-}
-.mod-showcase-card .mod-desc {
-  font-size: 0.92rem;
-  color: var(--lgray);
-  line-height: 1.7;
-  margin-bottom: 1.4rem;
-  flex-grow: 1;
-}
-.mod-features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.mod-features-list li {
-  font-size: 0.85rem;
-  color: var(--lgray);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  line-height: 1.5;
-}
-.mod-features-list li::before {
-  content: '✔';
-  color: var(--cyan);
-  font-weight: 800;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-.mod-footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--border);
-  margin-top: auto;
-}
-.mod-effect {
-  font-size: 0.82rem;
-  color: var(--cyan);
-  font-weight: 600;
-}
-.mod-link-btn {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: color 0.2s, transform 0.2s;
-}
-.mod-link-btn:hover {
-  color: var(--cyan);
-  transform: translateX(3px);
-}
-
-/* MOD-04 파이프라인 */
-.pipe-step-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.pipe-step-card .num {
-  font-family: var(--font-en);
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--cyan);
-  margin-bottom: 0.4rem;
-}
-.pipe-step-card h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-.pipe-step-card p {
-  font-size: 0.86rem;
-  color: var(--lgray);
-  line-height: 1.6;
-}
-</style>
 </head>
 <body>
 
@@ -306,434 +86,50 @@ a.hero-feature-card .sub {
     </p>
     <div class="hero-actions">
       <a href="contact.html" class="btn-primary" data-i18n="hero-btn-primary">무료 데모 신청</a>
-      <a href="#modules" class="btn-outline" data-i18n="hero-btn-outline">8대 모듈 살펴보기</a>
+      <a href="solution.html" class="btn-outline" data-i18n="hero-btn-outline">8대 솔루션 살펴보기</a>
     </div>
-
-    <!-- 8대 모듈 클릭 시 상세 섹션으로 바로 이동하는 대화형 카드 그리드 -->
     <div class="hero-features-grid">
-      <a href="#mod-01" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-01</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf1-main">사출 불량 종합 솔루션</div>
-        <div class="sub" data-i18n="hf1-sub">10대 사출 불량 동시 진단 &amp; 원인 처방</div>
-      </a>
-      <a href="#mod-02" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-02</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf2-main">Moldflow CAE 연동 최적화</div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf1-main">[MOD-01] 사출 불량 종합 솔루션</div>
+        <div class="sub" data-i18n="hf1-sub">10대 사출 불량 동시 진단 및 원인 처방</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf2-main">[MOD-02] Moldflow CAE 연동 최적화</div>
         <div class="sub" data-i18n="hf2-sub">해석 수치-실제 성형 융합 결함 사전 탐지</div>
-      </a>
-      <a href="#mod-03" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-03</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf3-main">AI 대리 모델 시뮬레이션</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf3-main">[MOD-03] AI 대리 모델 시뮬레이션</div>
         <div class="sub" data-i18n="hf3-sub">초고속 가상 유동해석 &amp; 다변량 예측</div>
-      </a>
-      <a href="#mod-04" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm" style="color:var(--cyan); border-color:var(--cyan)">MOD-04 ★</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf4-main">Moldflow 자동 최적화</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf4-main">[MOD-04] Moldflow 자동 최적화</div>
         <div class="sub" data-i18n="hf4-sub">LHS 30건 DoE &amp; 실시간 자동 루프</div>
-      </a>
-      <a href="#mod-05" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-05</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf5-main">사출 특화 RAG 지식 허브</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf5-main">[MOD-05] 사출 특화 RAG 지식 허브</div>
         <div class="sub" data-i18n="hf5-sub">심야 자율 크롤링 &amp; 정량 수치 처방전</div>
-      </a>
-      <a href="#mod-06" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-06</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf6-main">사출 CT 정밀 분석 시스템</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf6-main">[MOD-06] 사출 CT 정밀 분석 시스템</div>
         <div class="sub" data-i18n="hf6-sub">앙상블 NOPRECT 사이클타임 산출</div>
-      </a>
-      <a href="#mod-07" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-07</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf7-main">공정 작업순서 최적화</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf7-main">[MOD-07] 공정 작업순서 최적화</div>
         <div class="sub" data-i18n="hf7-sub">Sequence GA 기반 작업자 배치·CAPA</div>
-      </a>
-      <a href="#mod-08" class="hero-feature-card">
-        <div class="card-top">
-          <span class="mod-badge-sm">MOD-08</span>
-          <span class="arrow-icon">→</span>
-        </div>
-        <div class="main" data-i18n="hf8-main">사출기 원시 데이터 변환기</div>
+      </div>
+      <div class="hero-feature-item">
+        <div class="main" data-i18n="hf8-main">[MOD-08] 사출기 원시 데이터 변환기</div>
         <div class="sub" data-i18n="hf8-sub">다기종 로그 고속 ETL 표준 XLSX 변환</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 8대 모듈 상세 쇼케이스 (Full Suite Overview) -->
-<section id="modules" style="background:var(--surface)">
-  <div class="reveal centered">
-    <span class="section-tag">IM-SOLUTION Suite v1.2</span>
-    <h2 class="section-title title-oneline" data-i18n="mod-section-title">8대 핵심 모듈 상세 분석 및 기술 스펙</h2>
-    <p class="section-sub section-sub-wide" data-i18n="mod-section-sub">
-      단순한 타이틀 목록이 아닌, 사출 현장 데이터 수집부터 CAE 유동해석, 대리 모델, 실시간 설비 제어, 지식 허브까지 유기적으로 구동되는 8개 모듈의 실제 상세 엔지니어링 내용입니다.
-    </p>
-  </div>
-
-  <div class="mod-showcase-grid reveal">
-    <!-- MOD-01 -->
-    <div class="mod-showcase-card" id="mod-01">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-01</span>
-        <span class="mod-tag-pill">종합 불량 진단</span>
       </div>
-      <h3 data-i18n="m1-title">사출 불량 종합 솔루션 AI</h3>
-      <div class="mod-sub-en">Total Injection Defect Solution System</div>
-      <p class="mod-desc" data-i18n="m1-desc">
-        현장 사출 설비, 금형, 원자재, 사출 조건(온도, 압력, 속도, 시간, 위치 등 34개 변수)을 총망라한 통합 진단 알고리즘을 통해 10대 사출 불량을 객관적으로 분석하고 종합 최적 조건을 도출합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>10대 불량 동시 진단</strong>: 미성형, 플래시, 싱크마크, 웰드라인, 플로우마크, 실버, 제팅, 탄흔, 기공, 휨변형 완전 커버</li>
-        <li><strong>AI 최적 모델 자동 선택</strong>: RandomForest, XGBoost, LightGBM 등 6종 중 최고 신뢰도 모델 자동 학습</li>
-        <li><strong>역추론 수치 최적화</strong>: SLSQP, L-BFGS-B 등 4종 알고리즘으로 불량 간 트레이드오프를 방지하는 균형 조건 도출</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">불량률 80% 감축 · 트레이드오프 제로화</span>
-        <a href="solution.html#defects" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-02 -->
-    <div class="mod-showcase-card" id="mod-02">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-02</span>
-        <span class="mod-tag-pill">CAE 연동 최적화</span>
-      </div>
-      <h3 data-i18n="m2-title">Moldflow 해석 기반 사출 공정 최적화</h3>
-      <div class="mod-sub-en">Moldflow OptiSolution AI</div>
-      <p class="mod-desc" data-i18n="m2-desc">
-        Autodesk Moldflow 유동해석 수치와 실제 사출 성형 데이터를 결합하여 충전, 보압, 냉각, 변형 단계의 잠재 결함을 사전에 감지하고 최적 공정 가이드를 제시합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>해석-실성형 오차 보정</strong>: CAE 이상치와 현장 센서 실측치 간의 편차 계수를 AI가 자동으로 학습·보정</li>
-        <li><strong>게이트 및 유동 밸런스 평가</strong>: 압력 손실 및 전단 발열 위험 구간을 사전에 가시화</li>
-        <li><strong>금형 수정 가이드</strong>: 웰드라인 회피 및 잔류응력 최소화를 위한 설계 피드백 자동 생성</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">시험 성형(TO) 횟수 70% 이상 단축</span>
-        <a href="solution.html#features" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-03 -->
-    <div class="mod-showcase-card" id="mod-03">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-03</span>
-        <span class="mod-tag-pill">초고속 대리 모델</span>
-      </div>
-      <h3 data-i18n="m3-title">AI 대리 모델 기반 시뮬레이션 시스템</h3>
-      <div class="mod-sub-en">Moldflow Surrogate Simulation &amp; Process Optimization</div>
-      <p class="mod-desc" data-i18n="m3-desc">
-        고차원 사출 성형 데이터 기반 대리 모델(Surrogate)을 활용하여 수 시간 소요되는 3D 유동해석을 수 초 만에 초고속 가상 시뮬레이션하고 다변량 불량률을 예측합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>초고속 가상 성형</strong>: 복잡한 메시 해석 연산을 딥러닝/MLP 대리 모델로 대체하여 3~5초 내 결과 출력</li>
-        <li><strong>수천 개 공정 공간 실시간 탐색</strong>: 광범위한 파라미터 조합을 즉시 평가하여 전역 최적해(Global Optimum) 탐색</li>
-        <li><strong>민감도 및 파레토 프론트 분석</strong>: 품질과 사이클 타임 간의 최적 타협점을 시각적 그래프로 제공</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">해석 시간 수 시간 → 3초 단축</span>
-        <a href="solution.html#algorithm" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-04 -->
-    <div class="mod-showcase-card" id="mod-04" style="border-color:rgba(0,229,255,0.45); background:linear-gradient(145deg, #141720 0%, #0d121f 100%);">
-      <div class="mod-card-header">
-        <span class="mod-code-pill" style="background:var(--cyan); color:var(--bg);">MOD-04 ★ 핵심</span>
-        <span class="mod-tag-pill" style="color:var(--cyan); border-color:var(--cyan)">LHS 30건 자동 루프</span>
-      </div>
-      <h3 data-i18n="m4-title" style="color:var(--cyan)">Moldflow 자동 최적화</h3>
-      <div class="mod-sub-en">LHS 30-Case DoE &amp; Closed-Loop Auto Solver</div>
-      <p class="mod-desc" data-i18n="m4-desc">
-        <strong>Moldflow 해석 1건을 기준으로 LHS 실험계획 30건을 설계하고, 자동 해석한 결과로 사출 불량 개선 최적화 알고리즘이 최적 공정조건을 도출합니다.</strong>
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>라틴 하이퍼큐브(LHS) 30건 설계</strong>: 다변량 공정 공간을 빈틈없이 균등하게 분할 탐색하는 정밀 DoE 자동 생성</li>
-        <li><strong>백그라운드 무인 자동 해석</strong>: Moldflow API/VBScript와 연동되어 30건의 해석을 밤새 사람 개입 없이 순차 자동 실행</li>
-        <li><strong>AI 머신러닝 수치 최적화</strong>: 30건의 해석 데이터셋을 학습해 웰드라인과 변형을 극소화하는 최적 공정 도출</li>
-        <li><strong>Moldflow 최종 검증 Closed-Loop</strong>: 도출된 조건을 재해석 검증하여 현장 PLC에 바로 적용 가능한 리포트 완제</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect" style="color:var(--cyan); font-weight:700;">엔지니어 수작업 100% 무인화</span>
-        <a href="#moldflow-auto" class="mod-link-btn" style="color:var(--cyan)">6단계 파이프라인 보기 ↓</a>
-      </div>
-    </div>
-
-    <!-- MOD-05 -->
-    <div class="mod-showcase-card" id="mod-05">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-05</span>
-        <span class="mod-tag-pill">사출 특화 RAG</span>
-      </div>
-      <h3 data-i18n="m5-title">사출 특화 AI LLM 지식 허브</h3>
-      <div class="mod-sub-en">Injection Domain RAG Knowledge Hub</div>
-      <p class="mod-desc" data-i18n="m5-desc">
-        사출 현장 매뉴얼, 공정 불량 사례집, 학술 논문 데이터베이스를 기반으로 도메인 특화 RAG 질의응답을 제공하며, 물리 연산 엔진과 결합해 숫자로 된 구체적 처방전을 제시합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>Nightly RAG Crawler</strong>: 매일 심야(00:00~05:00) AI가 스스로 검색어를 기획해 글로벌 사출 학술·특허 자료 자율 수집</li>
-        <li><strong>하이브리드 정량 처방</strong>: 사출기 형개력, 스크류 직경 등 물리 연산과 결합해 "보압을 15MPa 낮추십시오" 정밀 제시</li>
-        <li><strong>사내 현장 노하우 영구 보존</strong>: 퇴직 엔지니어의 문제 해결 이력과 금형별 특이사항을 온프레미스 DB로 축적</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">24시간 무인 엔지니어링 Q&amp;A</span>
-        <a href="#rag-ai" class="mod-link-btn">처방 비교 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-06 -->
-    <div class="mod-showcase-card" id="mod-06">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-06</span>
-        <span class="mod-tag-pill">정밀 사이클 타임</span>
-      </div>
-      <h3 data-i18n="m6-title">사출 CT 정밀 분석 시스템</h3>
-      <div class="mod-sub-en">Auto-AI Injection Cycle Time Predictor</div>
-      <p class="mod-desc" data-i18n="m6-desc">
-        과거 생산 이력 및 공정/해석 조건을 자동 분석하여 앙상블 ML 엔진으로 최적 사이클 타임(NOPRECT)을 정밀 산출하고 설비 가동 효율을 극대화합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>냉각 및 충전 시간 병목 분석</strong>: 제품 두께 및 수지 열전도율 기반 최소 냉각 시간 이론치 자동 계산</li>
-        <li><strong>앙상블 NOPRECT 엔진</strong>: 사출 속도, 보압 유지 시간, 계량 속도 간의 상호작용을 정밀 추정</li>
-        <li><strong>생산성 최적화 지표</strong>: 쇼트당 단축 가능한 시간(초) 및 연간 예상 생산성 증대 효과(CAPA) 산출</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">사이클 타임 10~25% 단축</span>
-        <a href="solution.html#features" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-07 -->
-    <div class="mod-showcase-card" id="mod-07">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-07</span>
-        <span class="mod-tag-pill">작업순서 최적화</span>
-      </div>
-      <h3 data-i18n="m7-title">공정 작업순서 최적화 엔진</h3>
-      <div class="mod-sub-en">Injection Cycle &amp; Operator Balancing Optimizer</div>
-      <p class="mod-desc" data-i18n="m7-desc">
-        사출 설비 시간과 취출, 인서트 삽입, 게이트 절단, 외관 검사 등 후공정 작업을 단일 타임테이블로 분석하고, 작업자 배치 최적화로 최소 CT와 최대 생산량(CAPA)을 도출합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>통합 타임테이블 연동</strong>: 사출기 가동 인터벌과 수작업 공정의 간트 차트(Gantt) 자동 생성</li>
-        <li><strong>유전 알고리즘(Sequence GA)</strong>: 유휴 대기 시간(Idle Time)을 최소화하는 작업자 동선 및 순서 최적화</li>
-        <li><strong>적정 인원 산출</strong>: 1인 다기 조작 및 최적 라인 밸런싱(Line Balancing) 조건 자동 계산</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">라인 유휴시간 제로화 · 생산성 30% 증대</span>
-        <a href="solution.html#how" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-
-    <!-- MOD-08 -->
-    <div class="mod-showcase-card" id="mod-08">
-      <div class="mod-card-header">
-        <span class="mod-code-pill">MOD-08</span>
-        <span class="mod-tag-pill">고속 데이터 정제</span>
-      </div>
-      <h3 data-i18n="m8-title">사출기 원시 데이터 변환기</h3>
-      <div class="mod-sub-en">Injection Machine Log ETL Converter</div>
-      <p class="mod-desc" data-i18n="m8-desc">
-        동신, 우진, LS, 엔겔, 스미토모 등 다기종 사출기 컨트롤러에서 추출되는 비정형 CSV/TXT 로그의 헤더와 파라미터 코드를 고속 정제하여 엔터프라이즈 표준 XLSX 리포트로 변환합니다.
-      </p>
-      <ul class="mod-features-list">
-        <li><strong>다기종 사출기 로그 자동 인식</strong>: 제조사마다 상이한 압력·온도 코드와 열 이름을 표준 스키마로 매핑</li>
-        <li><strong>초당 수만 행 고속 처리</strong>: 수백 MB의 대용량 샷(Shot) 로그를 결측치 보정 및 이상치 필터링과 함께 즉시 정제</li>
-        <li><strong>전사 MES 및 AI 분석 연동</strong>: 정제된 데이터를 AI 모델 학습 포맷 및 전사 스마트팩토리 DB로 자동 익스포트</li>
-      </ul>
-      <div class="mod-footer-row">
-        <span class="mod-effect">데이터 전처리 소요 시간 90% 절감</span>
-        <a href="solution.html#how" class="mod-link-btn">자세히 보기 →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MOLDFLOW AUTO OPTIMIZATION SPOTLIGHT (MOD-04) -->
-<section id="moldflow-auto">
-  <div class="reveal centered">
-    <span class="section-tag">Core Deep-Dive · MOD-04</span>
-    <h2 class="section-title title-oneline" data-i18n="mf-title">Moldflow 자동 최적화 6단계 엔터프라이즈 파이프라인</h2>
-    <p class="section-sub section-sub-wide" data-i18n="mf-sub" style="font-size:1.05rem; color:var(--white);">
-      <strong>"Moldflow 해석 1건을 기준으로 LHS 실험계획 30건을 설계하고, 자동 해석한 결과로 사출 불량 개선 최적화 알고리즘이 최적 공정조건을 도출합니다."</strong>
-    </p>
-  </div>
-
-  <div class="mod-showcase-grid reveal" style="grid-template-columns: repeat(3, 1fr); gap:1.4rem;">
-    <div class="pipe-step-card">
-      <div class="num">01</div>
-      <h4 data-i18n="pipe1-h4">실행 폴더 / 표준 해석 (Baseline)</h4>
-      <p data-i18n="pipe1-p">Moldflow 시뮬레이션 작업 폴더를 지정하고, 초기 1회차 기준 해석 데이터를 자동으로 인지하여 베이스라인 품질 지표(웰드라인 길이, 사출압, 수축)를 로드합니다.</p>
-    </div>
-    <div class="pipe-step-card">
-      <div class="num">02</div>
-      <h4 data-i18n="pipe2-h4">불량 항목 / 변수 &amp; 타겟 설정</h4>
-      <p data-i18n="pipe2-p">개선하고자 하는 중점 불량 항목과 조절할 4대 핵심 공정 변수(용융온도, 금형온도, 사출속도, 보압)의 상한/하한 범위를 엔지니어 제약 조건과 함께 지정합니다.</p>
-    </div>
-    <div class="pipe-step-card">
-      <div class="num">03</div>
-      <h4 data-i18n="pipe3-h4">최적 실험계획법 생성 (LHS 30 Cases)</h4>
-      <p data-i18n="pipe3-p">다변량 파라미터 공간을 빈틈없이 균일하게 탐색하는 라틴 하이퍼큐브 샘플링(Latin Hypercube Sampling) 기법으로 30건의 정밀 실험 조건을 1초 만에 자동 생성합니다.</p>
-    </div>
-    <div class="pipe-step-card">
-      <div class="num">04</div>
-      <h4 data-i18n="pipe4-h4">실시간 자동 해석 (Background Loop)</h4>
-      <p data-i18n="pipe4-p">Moldflow API 및 자동화 VBScript와 실시간 연동되어 30건의 DoE 해석을 백그라운드에서 순차적으로 자동 실행하고 시뮬레이션 결과 데이터를 무인 추출합니다.</p>
-    </div>
-    <div class="pipe-step-card">
-      <div class="num">05</div>
-      <h4 data-i18n="pipe5-h4">AI 머신러닝 최적화 조건 도출</h4>
-      <p data-i18n="pipe5-p">수집된 30건의 고정밀 CAE 결과를 앙상블 머신러닝 알고리즘으로 학습해, 웰드라인과 변형 위험도를 극소화하는 수렴 완료 최적 공정 조건을 정량 도출합니다.</p>
-    </div>
-    <div class="pipe-step-card">
-      <div class="num">06</div>
-      <h4 data-i18n="pipe6-h4">Moldflow 최종 검증 &amp; Closed-Loop</h4>
-      <p data-i18n="pipe6-p">도출된 최적 파라미터를 Moldflow에 재주입하여 검증 해석을 완료하고, 현장 사출기 HMI/PLC에 즉시 반영 가능한 표준 성형 조건표(SV)를 자동 출력합니다.</p>
-    </div>
-  </div>
-
-  <div class="video-frame reveal" style="margin-left:auto;margin-right:auto; margin-top:3.5rem;">
-    <iframe src="https://www.youtube.com/embed/htqqAATOg1E" title="NexTech AI Moldflow Auto Optimization Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-  </div>
-  <div style="text-align:center; margin-top:1.5rem;">
-    <a href="https://www.youtube.com/@nextech-315" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="mf-yt-btn" style="display:inline-flex; align-items:center; gap:0.6rem;">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      <span>유튜브 채널에서 MOD-04 전체 시연 영상 시청하기</span>
-    </a>
-  </div>
-</section>
-
-<!-- 2-TIER ARCHITECTURE & EDGE AI 자율 제어 -->
-<section id="edge-ai" style="background:var(--surface)">
-  <div class="reveal centered">
-    <span class="section-tag">Autonomous Control · Edge AI</span>
-    <h2 class="section-title title-oneline" data-i18n="edge-title">2-Tier 아키텍처 &amp; Edge AI 실시간 자율 제어</h2>
-    <p class="section-sub section-sub-wide" data-i18n="edge-sub">
-      사출기에 스스로 생각하고 조치하는 '두뇌'를 이식합니다. 위험도가 급등해도 사람이 개입하기 전에 AI가 공정 조건을 스스로 재설정합니다.
-    </p>
-  </div>
-
-  <div class="video-frame reveal" style="margin-left:auto;margin-right:auto">
-    <iframe src="https://www.youtube.com/embed/Kub_MypZVxU" title="Edge AI Controller Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-  </div>
-
-  <div class="case-wrap reveal" style="margin-top:3rem;">
-    <div class="case-timeline">
-      <div class="case-step">
-        <div class="case-dot">1</div>
-        <div class="case-step-body">
-          <h4 data-i18n="edge1-h4">실시간 센서 스트림 모니터링</h4>
-          <p data-i18n="edge1-p">사출기 HMI와 연동된 최대사출압·쿠션량·석백·중량 등 31개 이상 채널 데이터를 0.1초 단위로 수집하며 종합 불량 위험도를 상시 추론합니다.</p>
-        </div>
-      </div>
-      <div class="case-step">
-        <div class="case-dot">2</div>
-        <div class="case-step-body">
-          <h4 data-i18n="edge2-h4">이상 감지 — 위험도 급등</h4>
-          <p data-i18n="edge2-p">원자재 로트 변경이나 금형 온도 드리프트로 위험도가 임계치(30%)를 초과하면 즉시 비상 제어 모드로 전환됩니다. (실제 데모 95.0% 급등 재현)</p>
-        </div>
-      </div>
-      <div class="case-step">
-        <div class="case-dot">3</div>
-        <div class="case-step-body">
-          <h4 data-i18n="edge3-h4">AI 자율 SV 재계산 &amp; XAI</h4>
-          <p data-i18n="edge3-p">사람의 개입 없이 AI가 최적 공정 조건(Optimized SV)을 역산출하여 기계로 피드백하고, XAI(설명 가능한 AI) 기여도 분석으로 원인 인자를 명확히 제시합니다.</p>
-        </div>
-      </div>
-      <div class="case-step">
-        <div class="case-dot">4</div>
-        <div class="case-step-body">
-          <h4 data-i18n="edge4-h4">약 12초 만에 24.9%로 자율 정상화</h4>
-          <p data-i18n="edge4-p">재계산된 조건이 사출기 PLC에 자동 적용되어 위험도가 24.9%로 안정화됩니다. 연속 불량을 원천 차단하는 완전한 Closed-Loop 자율 제어를 실현합니다.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="case-result">
-        <div class="case-result-title" data-i18n="edge-result-title">실제 설비 실증 데이터</div>
-        <div class="case-metrics">
-          <div class="case-metric">
-            <div class="case-metric-label" data-i18n="edge-m1-label">외란 주입 시 종합 위험도</div>
-            <div class="case-metric-row">
-              <div class="case-metric-val"><span class="accent">95.0</span>%</div>
-              <div class="case-metric-sub" data-i18n="edge-m1-sub">정상 임계치(30%) 초과</div>
-            </div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-label" data-i18n="edge-m2-label">Edge AI 자율 제어 후 위험도</div>
-            <div class="case-metric-row">
-              <div class="case-metric-val"><span class="accent">24.9</span>%</div>
-              <div class="case-metric-sub" data-i18n="edge-m2-sub">SV 자동 피드백 적용</div>
-            </div>
-            <span class="case-badge badge-green" data-i18n="edge-m2-badge">▼ 70.1%p 즉각 감소</span>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-label" data-i18n="edge-m3-label">정상화 소요 시간</div>
-            <div class="case-metric-row">
-              <div class="case-metric-val">~<span class="accent">12</span><span style="font-size:1rem">초</span></div>
-              <div class="case-metric-sub" data-i18n="edge-m3-sub">사람 개입 없이 무인 자동 복구</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RAG KNOWLEDGE AI -->
-<section id="rag-ai">
-  <div class="reveal centered">
-    <span class="section-tag">Knowledge RAG · MOD-05</span>
-    <h2 class="section-title" data-i18n="rag-title">쌓일수록 똑똑해지는 사출 특화 지식 AI (RAG)</h2>
-    <p class="section-sub section-sub-wide" data-i18n="rag-sub">
-      범용 LLM의 원론적 답변을 넘어, 수학적 물리 연산(Deterministic Logic), 글로벌 최신 논문·특허, 그리고 공장 노하우를 융합해 숫자로 된 구체적 처방전을 제시합니다.
-    </p>
-  </div>
-
-  <div class="adv-grid reveal">
-    <div class="adv-card">
-      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></div>
-      <h3 data-i18n="rag-f1-h3">잠들지 않는 AI (Nightly RAG Crawler)</h3>
-      <p data-i18n="rag-f1-p">매일 자정부터 새벽 5시까지 AI가 스스로 검색어를 기획해 전 세계 사출 논문·포럼·기술 자료를 수집하고 지식 DB에 누적합니다. 출근하면 시스템은 어제보다 더 똑똑해져 있습니다.</p>
-    </div>
-    <div class="adv-card">
-      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M8 16h2M12 16h2"/></svg></div>
-      <h3 data-i18n="rag-f2-h3">하이브리드 처방전 알고리즘</h3>
-      <p data-i18n="rag-f2-p">형개력·스크류 직경 등 기계 스펙과 현재 세팅값을 수학적으로 계산해 "보압을 15MPa 낮추십시오"처럼 구체적인 수치로 처방합니다. 두루뭉술한 원론이 아닙니다.</p>
-    </div>
-    <div class="adv-card">
-      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></div>
-      <h3 data-i18n="rag-f3-h3">우리 공장 맞춤형 사내 지식 DB</h3>
-      <p data-i18n="rag-f3-p">과거 불량 해결 사례와 작업자 피드백을 AI가 학습해 우리 금형에 맞는 조건을 찾습니다. 퇴사자의 노하우도 시스템에 남고, Q&amp;A 챗봇으로 사내 기록을 바로 물어볼 수 있습니다.</p>
     </div>
   </div>
 </section>
 
 <!-- CASE HIGHLIGHT -->
-<section id="case-highlight" style="background:var(--surface)">
+<section id="case-highlight">
   <div class="reveal">
     <span class="section-tag">Proven Results</span>
-    <h2 class="section-title title-oneline" data-i18n="hl-title">숫자로 증명하는 실제 생산 현장 개선 사례</h2>
+    <h2 class="section-title title-oneline" data-i18n="hl-title">숫자로 증명하는 실제 개선 사례</h2>
     <p class="section-sub" data-i18n="hl-sub">이론이 아닌, 실제 생산 현장에 적용해 검증된 결과입니다.</p>
   </div>
   <div class="highlight-grid reveal">
@@ -781,8 +177,43 @@ a.hero-feature-card .sub {
   </div>
 </section>
 
+<!-- NEW FEATURES -->
+<section id="new-features">
+  <div class="reveal centered">
+    <span class="section-tag">Key Innovation</span>
+    <h2 class="section-title" data-i18n="new-title">새로 확장된 핵심 기술</h2>
+    <p class="section-sub" data-i18n="new-sub">단순 분석을 넘어, Moldflow 자동 최적화와 실시간 자율 제어(Edge AI) 및 사출 지식 RAG로 완성됩니다.</p>
+  </div>
+  <div class="adv-grid reveal">
+    <div class="adv-card">
+      <div class="icon-wrap">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 0 1-14.6 5.9"></path><path d="M3.5 12a8.5 8.5 0 0 1 14.6-5.9"></path><polyline points="18.6 2.6 18.6 6.3 14.9 6.3"></polyline><polyline points="5.4 21.4 5.4 17.7 9.1 17.7"></polyline><circle cx="9" cy="10" r="1.1" fill="currentColor"></circle><circle cx="14.5" cy="9.5" r="1.1" fill="currentColor"></circle><circle cx="11.5" cy="14.5" r="1.1" fill="currentColor"></circle></svg>
+      </div>
+      <h3 data-i18n="new0-h3">MOD-04 Moldflow 자동 최적화</h3>
+      <p data-i18n="new0-p">Moldflow 해석 1건을 기준으로 LHS 실험계획 30건을 자동 설계하고, 실시간 자동 해석 결과로부터 사출 불량 개선 최적화 알고리즘이 최적 공정조건을 도출합니다.</p>
+      <a href="solution.html#moldflow-auto" style="display:inline-block; margin-top:1.1rem; color:var(--cyan); font-size:0.84rem; font-weight:600; text-decoration:none" data-i18n="new-more0">자세히 보기 →</a>
+    </div>
+    <div class="adv-card">
+      <div class="icon-wrap">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+      </div>
+      <h3 data-i18n="new1-h3">Edge AI 실시간 자율 제어</h3>
+      <p data-i18n="new1-p">위험도가 급등해도 사람이 개입하기 전에 AI가 공정 조건을 스스로 재설정합니다. 데모에서 위험도 95.0%가 약 12초 만에 24.9%로 자동 복구되었습니다.</p>
+      <a href="solution.html#edge-ai" style="display:inline-block; margin-top:1.1rem; color:var(--cyan); font-size:0.84rem; font-weight:600; text-decoration:none" data-i18n="new-more">자세히 보기 →</a>
+    </div>
+    <div class="adv-card">
+      <div class="icon-wrap">
+        <svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+      </div>
+      <h3 data-i18n="new2-h3">사출 특화 RAG 지식 AI</h3>
+      <p data-i18n="new2-p">수학적 물리 연산, 글로벌 최신 학술·특허 자료, 사내 노하우를 융합해 "보압을 15MPa 낮추십시오"처럼 숫자로 된 구체적 처방전을 제시합니다.</p>
+      <a href="solution.html#rag-ai" style="display:inline-block; margin-top:1.1rem; color:var(--cyan); font-size:0.84rem; font-weight:600; text-decoration:none" data-i18n="new-more2">자세히 보기 →</a>
+    </div>
+  </div>
+</section>
+
 <!-- YOUTUBE CHANNEL SPOTLIGHT -->
-<section id="youtube-section" style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section id="youtube-section" style="background:var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="reveal centered">
     <span class="section-tag">Video Library</span>
     <h2 class="section-title title-oneline" data-i18n="yt-title">NexTech 공식 유튜브 채널 시연 영상</h2>
@@ -795,13 +226,13 @@ a.hero-feature-card .sub {
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         <span>@nextech-315 공식 채널 바로가기</span>
       </a>
-      <a href="solution.html#moldflow-auto" class="btn-outline" data-i18n="yt-more-demos">솔루션 상세 보기</a>
+      <a href="solution.html#moldflow-auto" class="btn-outline" data-i18n="yt-more-demos">솔루션 전체 영상 보기</a>
     </div>
   </div>
 </section>
 
 <!-- WHY -->
-<section id="why" style="background:var(--surface)">
+<section id="why">
   <div class="reveal centered">
     <span class="section-tag">Why NexTech AI</span>
     <h2 class="section-title" data-i18n="why-title">NexTech AI를 선택해야 하는 이유</h2>
@@ -833,7 +264,7 @@ a.hero-feature-card .sub {
 </section>
 
 <!-- CONTACT BANNER -->
-<section id="cta-banner" style="text-align:center; padding:90px 5vw;">
+<section id="cta-banner" style="text-align:center; padding:90px 5vw; background:var(--surface);">
   <div class="reveal">
     <h2 class="section-title" data-i18n="cta-title">현장 데이터로<br>지금 바로 검증을 시작할 수 있습니다</h2>
     <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">무료 데모와 기술 상담을 통해 귀사의 공정에 맞는 도입 방안을 안내해 드립니다.</p>
@@ -868,82 +299,23 @@ const PAGE_EN = {
   "hero-sub": "From real-time diagnosis of 10 major defects to Moldflow automated optimization (LHS 30-case DoE), AI surrogate modeling, Edge AI autonomous control, and domain RAG knowledge hub — an enterprise engineering platform combining shop-floor data with cutting-edge AI.",
   "hero-btn-primary": "Request Free Demo",
   "hero-btn-outline": "Explore 8 Modules",
-  "hf1-main": "Total Defect Solution AI",
+  "hf1-main": "[MOD-01] Total Defect Solution AI",
   "hf1-sub": "Simultaneous diagnosis &amp; root cause prescription for 10 defects",
-  "hf2-main": "Moldflow CAE OptiSolution",
+  "hf2-main": "[MOD-02] Moldflow CAE OptiSolution",
   "hf2-sub": "CAE simulation data fusion &amp; early defect detection",
-  "hf3-main": "AI Surrogate Simulation",
+  "hf3-main": "[MOD-03] AI Surrogate Simulation",
   "hf3-sub": "Ultra-fast surrogate modeling &amp; multivariate prediction",
-  "hf4-main": "Moldflow Auto Optimization",
+  "hf4-main": "[MOD-04] Moldflow Auto Optimization",
   "hf4-sub": "LHS 30-case DoE &amp; real-time automated solver loop",
-  "hf5-main": "Injection Domain RAG Hub",
+  "hf5-main": "[MOD-05] Injection Domain RAG Hub",
   "hf5-sub": "Nightly autonomous crawling &amp; quantitative prescription",
-  "hf6-main": "Auto-AI CT Predictor",
+  "hf6-main": "[MOD-06] Auto-AI CT Predictor",
   "hf6-sub": "Ensemble NOPRECT precision cycle time calculation",
-  "hf7-main": "Sequence GA Optimizer",
+  "hf7-main": "[MOD-07] Sequence GA Optimizer",
   "hf7-sub": "Cycle &amp; operator balancing, capacity optimization",
-  "hf8-main": "Machine Raw Log Converter",
+  "hf8-main": "[MOD-08] Machine Raw Log Converter",
   "hf8-sub": "Multi-vendor machine log ETL into standard XLSX",
-  "mod-section-title": "Detailed Analysis &amp; Tech Specs of 8 Core Modules",
-  "mod-section-sub": "Not just titles, but real engineering specifications of our 8 systems spanning telemetry, CAE flow simulation, surrogate models, real-time control, and domain knowledge.",
-  "m1-title": "Total Injection Defect Solution AI",
-  "m1-desc": "Simultaneously diagnoses 10 major defects across 34 process parameters (temperature, pressure, speed, time, stroke) to derive balanced optimal parameters.",
-  "m2-title": "Moldflow CAE OptiSolution AI",
-  "m2-desc": "Fuses Moldflow simulation metrics with shop floor trial data to detect weld lines, shrinkage, and short shots in advance, reducing trial runs by over 70%.",
-  "m3-title": "AI Surrogate Simulation System",
-  "m3-desc": "Constructs AI surrogate models from high-dimensional simulation data, reproducing hours of CAE computation in 3 to 5 seconds for real-time global exploration.",
-  "m4-title": "Moldflow Auto Optimization",
-  "m4-desc": "Starting from 1 baseline Moldflow run, it designs 30 LHS DoE runs, runs background auto-solves, and uses AI optimization to derive optimal process conditions.",
-  "m5-title": "Injection Domain RAG Knowledge Hub",
-  "m5-desc": "Nightly autonomous crawlers collect global research, while physics calculations and plant know-how prescribe exact numeric adjustments like 'Lower packing pressure by 15 MPa'.",
-  "m6-title": "Auto-AI Cycle Time Predictor",
-  "m6-desc": "Analyzes historical records and process data via an ensemble ML engine (NOPRECT) to calculate precise cycle times, cutting CT by 10-25% and maximizing throughput.",
-  "m7-title": "Sequence GA Optimizer",
-  "m7-desc": "Synchronizes injection cycle with secondary operations on a single timeline, using genetic algorithms for operator balancing and zero idle time.",
-  "m8-title": "Machine Log ETL Converter",
-  "m8-desc": "High-speed ETL engine cleaning unstructured logs from diverse injection machine brands into standardized XLSX reports, reducing prep time by 90%.",
-  "mf-title": "MOD-04 Moldflow Automated Optimization 6-Stage Pipeline",
-  "mf-sub": "\"Starting from 1 baseline Moldflow run, it designs 30 LHS DoE runs, runs background auto-solves, and uses AI optimization to derive optimal process conditions.\"",
-  "pipe1-h4": "Working Folder &amp; Baseline Setup",
-  "pipe1-p": "Specifies Moldflow simulation directories and automatically loads initial run 1 baseline data (weld line length, peak pressure, shrinkage).",
-  "pipe2-h4": "Defect Targets &amp; Variable Bounds",
-  "pipe2-p": "Defines target defects to eliminate and sets allowable bounds for melt temp, mold temp, speed, and packing pressure with engineer constraints.",
-  "pipe3-h4": "LHS 30-Case DoE Generation",
-  "pipe3-p": "Generates 30 precisely distributed experiment cases across the multi-dimensional parameter space using Latin Hypercube Sampling in 1 second.",
-  "pipe4-h4": "Real-Time Automated Background Solves",
-  "pipe4-p": "Interacts with Moldflow APIs and VBScripts to run the 30 DoE runs sequentially in the background without human intervention.",
-  "pipe5-h4": "AI Machine Learning Process Optimization",
-  "pipe5-p": "Trains machine learning algorithms on the 30 high-fidelity runs to converge on optimal process parameters that minimize defect risk.",
-  "pipe6-h4": "Final Moldflow Validation &amp; Closed-Loop",
-  "pipe6-p": "Re-injects the optimal parameters into Moldflow for final verification, outputting production-ready reports for shop floor PLCs.",
-  "mf-yt-btn": "Watch Full MOD-04 Demo on YouTube Channel",
-  "edge-title": "2-Tier Architecture &amp; Real-Time Autonomous Control (Edge AI)",
-  "edge-sub": "Embedding an autonomous brain into injection machines: when risk spikes, AI resets process conditions autonomously before human intervention.",
-  "edge1-h4": "Real-Time Sensor Stream Monitoring",
-  "edge1-p": "Collects max injection pressure, cushion, suck-back, and weight data across 31+ channels every 0.1s, continuously inferring overall defect risk.",
-  "edge2-h4": "Anomaly Detected &mdash; Risk Spikes",
-  "edge2-p": "When process conditions drift beyond 30%, it switches to emergency control mode. (Reproduced 95.0% risk surge in real live testing)",
-  "edge3-h4": "AI Autonomously Recalculates SV &amp; XAI",
-  "edge3-p": "Without any human input, AI back-calculates optimal SV parameters and provides XAI contribution percentages for full transparency.",
-  "edge4-h4": "Back to Normal (24.9%) in ~12 Seconds",
-  "edge4-p": "The recalculated conditions apply to machine PLCs, cutting continuous defects off at the source in a true closed-loop cycle.",
-  "edge-result-title": "Actual Equipment Validation Data",
-  "edge-m1-label": "Overall Risk at Error Injection",
-  "edge-m1-sub": "Exceeded the 30% threshold",
-  "edge-m2-label": "Risk After Autonomous Control",
-  "edge-m2-sub": "With auto-recalculated SV applied",
-  "edge-m2-badge": "&#9660; 70.1pp decrease",
-  "edge-m3-label": "Time to Normalize",
-  "edge-m3-sub": "Fully automatic, no human input &mdash; verified across repeated runs",
-  "rag-title": "Injection Molding Knowledge AI That Gets Smarter as It Learns (RAG)",
-  "rag-sub": "A general-purpose LLM answers with textbook theory. NexTech fuses physics calculation, global papers, and plant know-how into concrete numbers.",
-  "rag-f1-h3": "The AI That Never Sleeps (Nightly RAG Crawler)",
-  "rag-f1-p": "From midnight to 5 a.m. every day, AI plans its own search queries, gathers injection molding papers, forums, and technical material, and accumulates it in the knowledge DB.",
-  "rag-f2-h3": "Hybrid Prescription Algorithm",
-  "rag-f2-p": "Calculates machine specs such as clamping force and screw diameter together with your current settings, and prescribes concrete numbers like 'Lower packing pressure by 15 MPa'.",
-  "rag-f3-h3": "Plant-Specific Internal Knowledge DB",
-  "rag-f3-p": "AI learns from past defect resolutions and operator feedback to find conditions that suit your molds. Know-how stays in the system permanently.",
-  "hl-title": "Results Proven in Numbers on the Shop Floor",
+  "hl-title": "Results Proven in Numbers",
   "hl-sub": "Not theory &mdash; outcomes verified on the actual production floor.",
   "hl-img1-alt": "Before: cosmetic cap with weld line defect",
   "hl-img2-alt": "After: cosmetic cap weld line defect resolved",
@@ -954,10 +326,21 @@ const PAGE_EN = {
   "hl-card2-m2": "After balanced optimization",
   "hl-card2-p": "Minimizes the trade-off where fixing one defect worsens another, arriving at conditions where all 10 defect types decrease evenly.",
   "hl-link": "View Details",
+  "new-title": "Key Extended Technologies",
+  "new-sub": "Going beyond analysis to Moldflow automated optimization, real-time Edge AI autonomous control, and domain RAG knowledge.",
+  "new0-h3": "MOD-04 Moldflow Auto Optimization",
+  "new0-p": "Starting with 1 baseline Moldflow run, it designs 30 LHS DoE runs and executes real-time background solves, deriving optimal process conditions with AI algorithms.",
+  "new-more0": "Learn more &rarr;",
+  "new1-h3": "Edge AI Real-Time Autonomous Control",
+  "new1-p": "When risk surges, AI resets process conditions autonomously before human intervention. In demo testing, risk of 95.0% was recovered to 24.9% in ~12 seconds.",
+  "new-more": "Learn more &rarr;",
+  "new2-h3": "Injection Domain Knowledge RAG AI",
+  "new2-p": "Fusing physics-based calculation, global papers, and plant know-how, it prescribes actionable numeric parameters like 'Lower packing pressure by 15 MPa'.",
+  "new-more2": "Learn more &rarr;",
   "yt-title": "Official NexTech YouTube Demonstration Videos",
   "yt-sub": "Watch real software walkthroughs of our 8 modules, Edge AI autonomous control, and Moldflow automated optimization.",
   "yt-channel-btn": "Visit @nextech-315 Channel",
-  "yt-more-demos": "Explore Detailed Solutions",
+  "yt-more-demos": "Watch All Demos on Solution Page",
   "why-title": "Why Choose NexTech AI",
   "why-sub": "An integrated 8-module engineering suite built by combining technical expertise with shop floor data.",
   "why1-h3": "Immediate On-Site Response",

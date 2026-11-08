@@ -7,24 +7,32 @@
 // ============================================================
 (function () {
   var CONFIG = {
-    dropdown: true,   // 상단 '솔루션' 에 마우스를 올리면 3가지 메뉴 표시
-    sideTabs: true    // 솔루션 페이지 왼쪽 탭 (3가지 메뉴)
+    dropdown: true,   // 상단 '솔루션' 에 마우스를 올리면 하위 메뉴 표시
+    sideTabs: true    // 솔루션 페이지 왼쪽 탭
   };
   if (/[?&]nav=old\b/.test(location.search)) return;
 
   var ITEMS = [
-    { href: 'solution.html#problem', ids: ['problem', 'how', 'defects', 'features', 'algorithm'],
-      ko: ['사출 불량 진단·최적화 AI', '10대 불량 진단과 역추론 최적화'],
-      en: ['Defect Diagnosis & Optimization AI', '10-defect diagnosis and inverse optimization'],
-      tab: { ko: '불량 진단', en: 'Diagnosis' } },
+    { href: 'index.html#modules', ids: ['modules'],
+      ko: ['8대 모듈 통합 아키텍처', 'IM-SOLUTION 8대 핵심 시스템 상세'],
+      en: ['8-Module Integrated Suite', 'Detailed specs of all 8 core modules'],
+      tab: { ko: '8대 모듈', en: '8 Modules' } },
+    { href: 'solution.html#moldflow-auto', ids: ['moldflow-auto'],
+      ko: ['MOD-04 Moldflow 자동 최적화', 'LHS 30건 DoE 및 실시간 자동 루프'],
+      en: ['MOD-04 Moldflow Auto-Opt', 'LHS 30-case DoE & real-time auto solver'],
+      tab: { ko: 'Moldflow 최적화', en: 'Moldflow Opt' } },
     { href: 'solution.html#edge-ai', ids: ['edge-ai'],
-      ko: ['Edge AI 실시간 자율 제어', '위험 감지 즉시 공정 조건을 스스로 재설정'],
-      en: ['Edge AI Real-Time Control', 'Resets process conditions the moment risk is detected'],
+      ko: ['Edge AI 실시간 자율 제어', '위험 감지 시 12초 내 SV 자동 재설정'],
+      en: ['Edge AI Real-Time Control', 'Autonomously resets SV within 12s on risk'],
       tab: { ko: '실시간 제어', en: 'Edge AI' } },
     { href: 'solution.html#rag-ai', ids: ['rag-ai'],
-      ko: ['사출 지식 RAG AI', '쌓일수록 똑똑해지는 지식 기반 처방'],
-      en: ['Injection Knowledge RAG AI', 'Prescriptions that get smarter as knowledge grows'],
-      tab: { ko: '지식 RAG', en: 'Knowledge RAG' } }
+      ko: ['사출 지식 특화 RAG AI', '심야 자율 크롤링 & 구체적 수치 처방'],
+      en: ['Injection Knowledge RAG AI', 'Nightly crawling & numeric prescriptions'],
+      tab: { ko: '지식 RAG', en: 'Knowledge RAG' } },
+    { href: 'solution.html#problem', ids: ['problem', 'how', 'defects', 'features', 'algorithm'],
+      ko: ['10대 불량 진단·역추론 AI', '10대 불량 동시 진단과 역추론 최적화'],
+      en: ['10-Defect Diagnosis & Opt AI', 'Simultaneous diagnosis & inverse optimization'],
+      tab: { ko: '불량 진단', en: 'Defect Diagnosis' } }
   ];
   var ARIA = { ko: '솔루션 바로가기', en: 'Solution shortcuts' };
 
@@ -71,7 +79,7 @@
           var a = el('a', 'mobile-sub');
           a.href = it.href;
           mMenu.insertBefore(a, after);
-          a.addEventListener('click', function () {      // 같은 페이지 이동 시에도 메뉴를 닫음
+          a.addEventListener('click', function () {
             mMenu.classList.remove('open');
             document.body.style.overflow = '';
             var t = document.querySelector('.nav-toggle');
@@ -83,11 +91,11 @@
     }
 
     /* ---------- 2) 좌측 탭 (솔루션 페이지에서만) ---------- */
-    if (CONFIG.sideTabs && document.getElementById('edge-ai') && document.getElementById('rag-ai')) {
+    if (CONFIG.sideTabs && (document.getElementById('edge-ai') || document.getElementById('moldflow-auto'))) {
       var aside = el('aside', 'side-tabs');
       var tabs = ITEMS.map(function (it) {
         var a = el('a', 'side-tab');
-        a.href = '#' + it.ids[0];
+        a.href = it.href.indexOf('#') !== -1 ? ('#' + it.href.split('#')[1]) : it.href;
         aside.appendChild(a);
         labelUpdaters.push(function (l) { a.textContent = it.tab[l]; a.title = it[l][0]; });
         return a;
@@ -98,31 +106,41 @@
       var ticking = false;
       function spy() {
         ticking = false;
-        var probe = window.innerHeight * 0.35;
-        tabs.forEach(function (tab, i) {
-          var ids = ITEMS[i].ids;
-          var first = document.getElementById(ids[0]);
-          var last = document.getElementById(ids[ids.length - 1]);
-          var on = false;
-          if (first && last) {
-            on = first.getBoundingClientRect().top <= probe && last.getBoundingClientRect().bottom > probe;
-          }
-          tab.classList.toggle('active', on);
-          if (on) tab.setAttribute('aria-current', 'true'); else tab.removeAttribute('aria-current');
+        var top = window.scrollY + 140;
+        var activeIdx = -1;
+        ITEMS.forEach(function (it, idx) {
+          (it.ids || []).forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el && el.offsetTop <= top && el.offsetTop + el.offsetHeight > top) {
+              activeIdx = idx;
+            }
+          });
+        });
+        tabs.forEach(function (t, idx) {
+          t.classList.toggle('active', idx === activeIdx);
         });
       }
-      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(spy); }
+      }, { passive: true });
       spy();
     }
 
-    /* ---------- 3) KO/EN 전환에 맞춰 문구 갱신 ---------- */
-    function render() { var l = lang(); labelUpdaters.forEach(function (f) { f(l); }); }
-    render();
-    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    /* ---------- 3) 언어 변경 시 텍스트 갱신 ---------- */
+    function refresh(l) {
+      labelUpdaters.forEach(function (fn) { fn(l); });
+    }
+    refresh(lang());
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setTimeout(function () { refresh(lang()); }, 0);
+      });
+    });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

@@ -79,7 +79,7 @@ html { scroll-padding-top: 76px; }
   backdrop-filter: blur(8px);
   transition: transform 0.18s ease, background 0.18s, color 0.18s, border-color 0.18s;
 }
-html[lang="ko"] .side-tab { text-orientation: upright; }   /* 한글 라벨은 글자를 모두 똑바로 세움 */
+html[lang="ko"] .side-tab, html[lang="ja"] .side-tab { text-orientation: upright; }   /* 한글·일본어 라벨은 글자를 모두 똑바로 세움 */
 .side-tab:hover { color: var(--white); transform: translateX(4px); }
 .side-tab.active { color: var(--bg); background: var(--cyan); border-color: var(--cyan); transform: translateX(6px); }
 

@@ -16,19 +16,22 @@
     { href: 'solution.html#problem', ids: ['problem', 'how', 'defects', 'features', 'algorithm'],
       ko: ['사출 불량 진단·최적화 AI', '10대 불량 진단과 역추론 최적화'],
       en: ['Defect Diagnosis & Optimization AI', '10-defect diagnosis and inverse optimization'],
-      tab: { ko: '불량 진단', en: 'Diagnosis' } },
+      ja: ['成形不良 診断・最適化AI', '10大不良の診断と逆推論最適化'],
+      tab: { ko: '불량 진단', en: 'Diagnosis', ja: '不良診断' } },
     { href: 'solution.html#edge-ai', ids: ['edge-ai'],
       ko: ['Edge AI 실시간 자율 제어', '위험 감지 즉시 공정 조건을 스스로 재설정'],
       en: ['Edge AI Real-Time Control', 'Resets process conditions the moment risk is detected'],
-      tab: { ko: '실시간 제어', en: 'Edge AI' } },
+      ja: ['Edge AI リアルタイム自律制御', 'リスク検知と同時に成形条件を自ら再設定'],
+      tab: { ko: '실시간 제어', en: 'Edge AI', ja: 'リアルタイム制御' } },
     { href: 'solution.html#rag-ai', ids: ['rag-ai'],
       ko: ['사출 지식 RAG AI', '쌓일수록 똑똑해지는 지식 기반 처방'],
       en: ['Injection Knowledge RAG AI', 'Prescriptions that get smarter as knowledge grows'],
-      tab: { ko: '지식 RAG', en: 'Knowledge RAG' } }
+      ja: ['射出成形ナレッジ RAG AI', '知識が蓄積されるほど賢くなる処方'],
+      tab: { ko: '지식 RAG', en: 'Knowledge RAG', ja: '知識 RAG' } }
   ];
-  var ARIA = { ko: '솔루션 바로가기', en: 'Solution shortcuts' };
+  var ARIA = { ko: '솔루션 바로가기', en: 'Solution shortcuts', ja: 'ソリューションへ移動' };
 
-  function lang() { return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'ko'; }
+  function lang() { var l = document.documentElement.getAttribute('lang'); return (l === 'en' || l === 'ja') ? l : 'ko'; }
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -117,7 +120,7 @@
       spy();
     }
 
-    /* ---------- 3) KO/EN 전환에 맞춰 문구 갱신 ---------- */
+    /* ---------- 3) KO/EN/JA 전환에 맞춰 문구 갱신 ---------- */
     function render() { var l = lang(); labelUpdaters.forEach(function (f) { f(l); }); }
     render();
     new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });

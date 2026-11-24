@@ -45,8 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  /* ---------- i18n (KO/EN toggle) ---------- */
+  /* ---------- i18n (KO/EN/JA toggle) ---------- */
   var EN = (typeof PAGE_EN !== 'undefined') ? PAGE_EN : {};
+  var JA = (typeof PAGE_JA !== 'undefined') ? PAGE_JA : {};
   var KO = {};
   document.querySelectorAll('[data-i18n]').forEach(function (el) {
     KO[el.getAttribute('data-i18n')] = el.innerHTML;
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var TITLE_KO = document.title;
 
   function applyLang(lang) {
-    var dict = (lang === 'en') ? EN : KO;
+    var dict = (lang === 'en') ? EN : (lang === 'ja') ? JA : KO;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) el.innerHTML = dict[key];
@@ -67,12 +68,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var key = el.getAttribute('data-i18n-alt');
       if (lang === 'en' && EN[key] !== undefined) {
         el.setAttribute('alt', EN[key]);
+      } else if (lang === 'ja' && JA[key] !== undefined) {
+        el.setAttribute('alt', JA[key]);
       } else if (ALT_KO[key] !== undefined) {
         el.setAttribute('alt', ALT_KO[key]);
       }
     });
-    document.title = (lang === 'en') ? (EN['page-title'] || TITLE_KO) : TITLE_KO;
-    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'ko');
+    document.title = (lang === 'en') ? (EN['page-title'] || TITLE_KO)
+                   : (lang === 'ja') ? (JA['page-title'] || TITLE_KO) : TITLE_KO;
+    document.documentElement.setAttribute('lang', (lang === 'en' || lang === 'ja') ? lang : 'ko');
     document.querySelectorAll('.lang-btn').forEach(function (b) {
       b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
     });
@@ -87,5 +91,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var saved = null;
   try { saved = localStorage.getItem('nextech-lang'); } catch (e) {}
-  if (saved === 'en') applyLang('en');
+  if (saved === 'en' || saved === 'ja') applyLang(saved);
 });

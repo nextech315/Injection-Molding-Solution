@@ -19,6 +19,7 @@
   --font-ko:  'Noto Sans KR', sans-serif;
   --font-en:  'Inter', sans-serif;
 }
+html[lang="ja"] { --font-ko: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }   /* 일본어 화면은 일본어 글꼴 */
 
 html { scroll-behavior: smooth; }
 
@@ -613,6 +614,10 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ── */
+@media (min-width: 901px) and (max-width: 1100px) {   /* KO/EN/JA 3개 버튼이 들어가도록 좁은 화면에서 메뉴 간격만 조금 줄임 */
+  .nav-right { gap: 1.3rem; }
+  .nav-links { gap: 1.5rem; }
+}
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-right .lang-toggle, .nav-right .nav-cta { display: none; }

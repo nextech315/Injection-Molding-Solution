@@ -7,9 +7,9 @@
 <meta name="description" content="화장품 캡 웰드 라인 불량 90% 개선, 10대 불량 동시 최적화 등 NexTech AI를 실제 생산 현장에 적용해 검증한 사례를 소개합니다.">
 <link rel="canonical" href="https://nextech315.github.io/Injection-Molding-Solution/case.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
-<link rel="stylesheet" href="css/nav-extra.css?v=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/nav-extra.css?v=2">
 </head>
 <body>
 
@@ -26,6 +26,7 @@
     <div class="lang-toggle" role="group" aria-label="Language switch">
       <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
       <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
     </div>
     <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
   </div>
@@ -41,6 +42,7 @@
   <div class="lang-toggle" role="group" aria-label="Language switch">
     <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
     <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+    <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
   </div>
   <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
 </div>
@@ -124,7 +126,7 @@
           <div class="case-metric">
             <div class="case-metric-label" data-i18n="case-m3-label">조건 도출 소요 시간</div>
             <div class="case-metric-row">
-              <div class="case-metric-val">&lt;<span class="accent">5</span><span style="font-size:1rem">초</span></div>
+              <div class="case-metric-val">&lt;<span class="accent">5</span><span data-i18n="case-m3-unit" style="font-size:1rem">초</span></div>
               <div class="case-metric-sub" data-i18n="case-m3-sub">기존 수 시간의 시행착오 → 수 초</div>
             </div>
             <span class="case-badge badge-green" data-i18n="case-m3-badge">▼ 99% 단축</span>
@@ -331,8 +333,73 @@ const PAGE_EN = {
   "cta3-sub": "A free demo lets you preview the improvement potential for your own process.",
   "cta3-btn": "Request Free Demo"
 };
+const PAGE_JA = {
+  "page-title": "導入事例 | NexTech AI 射出成形不良ソリューション",
+  "nav-home": "ホーム", "nav-solution": "ソリューション", "nav-case": "導入事例", "nav-contact": "お問い合わせ", "nav-cta": "デモ申込",
+  "ph-h1": "生産現場で証明された成果",
+  "ph-p": "理論上の性能ではなく、実際の射出成形ラインで検証した改善結果です。",
+  "demo-title": "3分でわかるNexTech AI",
+  "demo-sub": "診断から最適条件の導出までの流れを、実際の画面でご覧ください。",
+  "case-title": "化粧品キャップのウェルドライン不良改善",
+  "case-sub": "化粧品キャップの射出成形ラインで発生したウェルドライン不良を、NexTech AIが診断して改善した実例です。",
+  "case1-h4": "不良発生 &mdash; 試行錯誤の繰り返し",
+  "case1-p": "化粧品キャップの成形中にウェルドラインが繰り返し発生しました。樹脂温度、金型温度、射出速度を経験で調整しましたが、定量的な基準がないため結果を再現できませんでした。",
+  "case2-h4": "データ入力 &amp; AI学習",
+  "case2-p": "ウェルドラインが発生した実際の成形条件と現場のノウハウをNexTech AIに入力しました。最適なアルゴリズムが自動で選ばれ、初期の不良リスクを即座に診断しました。",
+  "case3-h4": "AIが最適条件を導出",
+  "case3-p": "逆最適化アルゴリズムがウェルドラインのリスクを最小にする条件を自動で探索し、リスクを<span class=\"accent\">80</span>%から<span class=\"accent\">8</span>%まで下げる改善条件を数秒で導き出しました。",
+  "case4-h4": "現場適用 &amp; 目視検証",
+  "case4-p": "AIが推奨した条件を実際の成形機に適用し、透明材と着色材の両方で試し打ちを行いました。改善前後の比較で、ウェルドラインが目に見えて減ったことを確認しました。",
+  "case-result-title": "成果のまとめ",
+  "case-m1-label": "初期のウェルドライン不良リスク",
+  "case-m1-sub": "改善前の実際の成形条件",
+  "case-m2-label": "AI最適化後のリスク",
+  "case-m2-sub": "AI逆最適化を適用した条件",
+  "case-m2-badge": "&#9660; 72ポイント減少(90%低減)",
+  "case-m3-label": "条件導出にかかる時間",
+  "case-m3-unit": "秒",
+  "case-m3-sub": "これまで数時間の試行錯誤 &rarr; 数秒",
+  "case-m3-badge": "&#9660; 99%短縮",
+  "case-photos-label": "改善前後：実際の成形品",
+  "case-group1-title": "透明材 &mdash; ウェルドラインがはっきり見える",
+  "case-img1-alt": "改善前：ウェルドライン不良が発生した透明の化粧品キャップ",
+  "case-cap1": "リスク80% &middot; ウェルドラインの跡がはっきり見える",
+  "case-img2-alt": "改善後：ウェルドラインが改善された透明の化粧品キャップ",
+  "case-cap2": "リスク8% &middot; ウェルドラインの跡が消えた",
+  "case-group2-title": "着色材 &mdash; 顔料で見えにくくてもAIがリスクを定量化",
+  "case-img3-alt": "改善前：着色した化粧品キャップ",
+  "case-cap3": "改善前の条件で成形した製品",
+  "case-img4-alt": "改善後：着色した化粧品キャップ",
+  "case-cap4": "AI最適化条件で成形した製品",
+  "case-note": "* 本事例は化粧品容器キャップの実際の射出成形データに基づいています。パートナーの成形データをご提供いただいたYonwoo Koreaに感謝いたします。",
+  "multi-title": "ウェルドラインだけではない &mdash; 10大不良を一度に最適化",
+  "multi-sub": "ショートショット、ヒケ、バリ、ヤケ、反りが複雑に絡み合うラインで、<br>NexTech AIが一つのモデルで10種類の不良すべてを診断し、バランスを取った方法をご紹介します。",
+  "multi-h4": "一つの不良だけを直すより「10大不良を同時に」が優れている理由",
+  "multi-p1": "現場では、一つの不良を直して終わりということはほとんどありません。ウェルドラインを減らそうと射出速度を下げればショートショットのリスクが上がり、ヒケを減らそうと保圧を上げればバリが増えます。不良の種類は本来、互いに絡み合っています。",
+  "multi-p2": "NexTech AIは、一つの条件変更が10種類の不良すべてにどう影響するかを同時に計算し、ある不良が改善すると別の不良が悪化する<strong style=\"color:var(--white)\">トレードオフ</strong>を最小にする条件を見つけます。",
+  "riskbars-title": "診断例 &mdash; 実際の現場データによる10大不良のリスク",
+  "multi-flow-label": "4段階の反復最適化 &mdash; リスクの推移",
+  "flow1-tag": "Step 1 &middot; 現在条件の診断",
+  "flow1-desc": "現場の履歴データによる総合不良リスク。ショートショット、ヒケ、ウェルドライン、ボイド、反りを高リスクとして特定。",
+  "flow2-tag": "Step 2 &middot; CAEデータの統合",
+  "flow2-desc": "MoldFlowシミュレーションデータを履歴データと統合。リスクがウェルドラインと反りを中心に再編される。",
+  "flow3-tag": "Step 3 &middot; 1次最適化",
+  "flow3-desc": "大きく改善したが、バリとヤケのリスクはむしろ上昇。AIがそれらの重みを1&rarr;3.5に上げて再計算。",
+  "flow4-tag": "Step 4 &middot; バランス再最適化",
+  "flow4-desc": "ウェルドラインのリスクが再び上がったことも捉えて1&rarr;1.5の補正を追加し、10種類の不良すべてが均等に下がる条件に到達。",
+  "multi-note": "最終リスク(39%)は数値上は1次結果(21%)より高いものの、より信頼できる結果です &mdash; どの不良も犠牲にせず<strong>10種類の不良すべてがバランスよく下がる</strong>からです。NexTech AIはリスクの数値を最小にするだけでなく、トレードオフを考慮した、現場で実際に使える条件を見つけます。",
+  "mode1-tag": "全体最適化モード",
+  "mode1-h4": "10大不良の統合最適化",
+  "mode1-p": "10種類の不良のリスクを同時に計算し、どの不良も悪化させずに全体のリスクが最もバランスよく下がる条件を導き出します。製品や不良の種類が多いラインに最適です。",
+  "mode2-tag": "ターゲット最適化モード",
+  "mode2-h4": "一つの不良に集中した最適化",
+  "mode2-p": "ウェルドラインなど急を要する不良を一つ指定すると、ほかの不良を監視しながらそのリスクの最小化に集中します。緊急の問題への対応に最適です。",
+  "cta3-title": "同じ成果を<br>お客様のデータで確かめてください",
+  "cta3-sub": "無料デモで、お客様の工程の改善可能性を事前に確認できます。",
+  "cta3-btn": "無料デモを申し込む"
+};
 </script>
-<script src="js/main.js"></script>
-<script src="js/nav-extra.js?v=1"></script>
+<script src="js/main.js?v=2"></script>
+<script src="js/nav-extra.js?v=2"></script>
 </body>
 </html>

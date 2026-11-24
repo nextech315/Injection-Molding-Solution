@@ -78,14 +78,43 @@ document.addEventListener('DOMContentLoaded', function () {
                    : (lang === 'ja') ? (JA['page-title'] || TITLE_KO) : TITLE_KO;
     document.documentElement.setAttribute('lang', (lang === 'en' || lang === 'ja') ? lang : 'ko');
     document.querySelectorAll('.lang-btn').forEach(function (b) {
-      b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
+      var on = b.getAttribute('data-lang-btn') === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.lang-current-code').forEach(function (c) {
+      c.textContent = lang.toUpperCase();
     });
     try { localStorage.setItem('nextech-lang', lang); } catch (e) {}
   }
 
+  /* ---------- Language dropdown open / close ---------- */
+  function closeLangMenus(except) {
+    document.querySelectorAll('.lang-select.open').forEach(function (s) {
+      if (s === except) return;
+      s.classList.remove('open');
+      var t = s.querySelector('.lang-current');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.querySelectorAll('.lang-select').forEach(function (sel) {
+    var cur = sel.querySelector('.lang-current');
+    if (!cur) return;
+    cur.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeLangMenus(sel);
+      var open = sel.classList.toggle('open');
+      cur.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function () { closeLangMenus(null); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLangMenus(null); });
+
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
       applyLang(btn.getAttribute('data-lang-btn'));
+      closeLangMenus(null);
     });
   });
 

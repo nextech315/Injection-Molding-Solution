@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://nextech315.github.io/Injection-Molding-Solution/solution.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <link rel="stylesheet" href="css/nav-extra.css?v=2">
 <style>
 .edge-shot-list { display: flex; flex-direction: column; gap: 3rem; margin-top: 1.2rem; }
@@ -33,10 +33,13 @@
       <li><a href="case.html" data-i18n="nav-case">사례</a></li>
       <li><a href="contact.html" data-i18n="nav-contact">문의</a></li>
     </ul>
-    <div class="lang-toggle" role="group" aria-label="Language switch">
-      <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
-      <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
-      <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
+    <div class="lang-select">
+      <button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="lang-current-code">KO</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="lang-menu" role="listbox" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang-btn="ko" role="option">KO</button>
+        <button type="button" class="lang-btn" data-lang-btn="en" role="option">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="ja" role="option">JA</button>
+      </div>
     </div>
     <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
   </div>
@@ -49,10 +52,13 @@
   <a href="solution.html" data-i18n="nav-solution">솔루션</a>
   <a href="case.html" data-i18n="nav-case">사례</a>
   <a href="contact.html" data-i18n="nav-contact">문의</a>
-  <div class="lang-toggle" role="group" aria-label="Language switch">
-    <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
-    <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
-    <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
+  <div class="lang-select">
+    <button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="lang-current-code">KO</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="lang-menu" role="listbox" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang-btn="ko" role="option">KO</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" role="option">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="ja" role="option">JA</button>
+    </div>
   </div>
   <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
 </div>
@@ -762,7 +768,7 @@ const PAGE_JA = {
   "rag-v2-desc": "AIが検索クエリを立て、Webを検索し、データを構造化して保存するまでの全工程をリアルタイムの作業ログで表示します。10大不良と、樹脂・射出・成形機・金型など5つの主要テーマの知識を自動で収集し、指定したテーマで収集することもできます。"
 };
 </script>
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 <script src="js/nav-extra.js?v=2"></script>
 <script>
 /* YouTube 영상 ID를 .rag-media 의 data-yt 속성에 넣으면 썸네일 대신 영상이 재생됩니다. */

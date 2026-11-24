@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://nextech315.github.io/Injection-Molding-Solution/contact.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <link rel="stylesheet" href="css/nav-extra.css?v=2">
 </head>
 <body>
@@ -23,10 +23,13 @@
       <li><a href="case.html" data-i18n="nav-case">사례</a></li>
       <li><a href="contact.html" data-i18n="nav-contact">문의</a></li>
     </ul>
-    <div class="lang-toggle" role="group" aria-label="Language switch">
-      <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
-      <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
-      <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
+    <div class="lang-select">
+      <button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="lang-current-code">KO</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="lang-menu" role="listbox" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang-btn="ko" role="option">KO</button>
+        <button type="button" class="lang-btn" data-lang-btn="en" role="option">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="ja" role="option">JA</button>
+      </div>
     </div>
     <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
   </div>
@@ -39,10 +42,13 @@
   <a href="solution.html" data-i18n="nav-solution">솔루션</a>
   <a href="case.html" data-i18n="nav-case">사례</a>
   <a href="contact.html" data-i18n="nav-contact">문의</a>
-  <div class="lang-toggle" role="group" aria-label="Language switch">
-    <button type="button" class="lang-btn active" data-lang-btn="ko">KO</button>
-    <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
-    <button type="button" class="lang-btn" data-lang-btn="ja">JA</button>
+  <div class="lang-select">
+    <button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="lang-current-code">KO</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="lang-menu" role="listbox" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang-btn="ko" role="option">KO</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" role="option">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="ja" role="option">JA</button>
+    </div>
   </div>
   <a href="contact.html" class="nav-cta" data-i18n="nav-cta">데모 신청</a>
 </div>
@@ -175,7 +181,7 @@ const PAGE_JA = {
   "contact-row4-val": "韓国語 / 英語 / 日本語"
 };
 </script>
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 <script src="js/nav-extra.js?v=2"></script>
 </body>
 </html>

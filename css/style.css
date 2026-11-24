@@ -99,19 +99,34 @@ nav {
 }
 .nav-cta:hover { opacity: 0.85; }
 
-.lang-toggle {
-  display: flex; align-items: center; gap: 2px;
-  background: var(--panel); border: 1px solid var(--border2);
-  border-radius: 20px; padding: 3px;
+/* 언어 선택 드롭다운 (KO / EN / JA) */
+.lang-select { position: relative; }
+.lang-current {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-en); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--white); background: var(--panel);
+  border: 1px solid var(--border2); border-radius: 8px;
+  padding: 0.42rem 0.6rem 0.42rem 0.8rem; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
 }
+.lang-current:hover, .lang-select.open .lang-current { border-color: var(--cyan); }
+.lang-chev { width: 14px; height: 14px; stroke: var(--lgray); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+.lang-select.open .lang-chev { transform: rotate(180deg); stroke: var(--cyan); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 300;
+  min-width: 100%; display: none; flex-direction: column; gap: 2px;
+  background: var(--panel); border: 1px solid var(--border2); border-radius: 10px;
+  padding: 4px; box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+.lang-select.open .lang-menu { display: flex; }
 .lang-btn {
-  font-family: var(--font-en); font-size: 0.76rem; font-weight: 700;
-  color: var(--gray); background: transparent; border: none;
-  border-radius: 16px; padding: 0.32rem 0.85rem;
-  cursor: pointer; transition: background 0.2s, color 0.2s;
+  font-family: var(--font-en); font-size: 0.78rem; font-weight: 600; text-align: left;
+  color: var(--lgray); background: transparent; border: none;
+  border-radius: 6px; padding: 0.45rem 0.8rem; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
-.lang-btn:hover { color: var(--white); }
-.lang-btn.active { background: var(--cyan); color: var(--bg); }
+.lang-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+.lang-btn.active { color: var(--cyan); background: var(--cyan-dim); }
 
 .nav-toggle {
   display: none;
@@ -140,7 +155,7 @@ nav {
   text-decoration: none; padding: 1rem 0;
   border-bottom: 1px solid var(--border);
 }
-.mobile-menu .lang-toggle { margin-top: 1.5rem; align-self: flex-start; }
+.mobile-menu .lang-select { margin-top: 1.5rem; align-self: flex-start; }
 .mobile-menu .nav-cta { margin-top: 1rem; text-align: center; padding: 0.9rem; }
 
 /* ── PAGE HEADER (sub-pages) ── */
@@ -614,13 +629,9 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ── */
-@media (min-width: 901px) and (max-width: 1100px) {   /* KO/EN/JA 3개 버튼이 들어가도록 좁은 화면에서 메뉴 간격만 조금 줄임 */
-  .nav-right { gap: 1.3rem; }
-  .nav-links { gap: 1.5rem; }
-}
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-right .lang-toggle, .nav-right .nav-cta { display: none; }
+  .nav-right .lang-select, .nav-right .nav-cta { display: none; }
   .nav-toggle { display: flex; }
 
   section { padding: 70px 6vw; }
